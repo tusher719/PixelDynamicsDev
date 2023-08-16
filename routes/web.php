@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\Backend\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
 
+    // Admin User All Route
+    Route::controller(PortfolioController::class)->group(function(){
+        Route::get('/portfolio/category', 'PortfolioCategory')->name('portfolio.category');
+        Route::post('/store/category', 'StoreCategory')->name('store.category');
+        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+        Route::post('/update/category', 'UpdateCategory')->name('update.category');
+        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
+
 }); // End Group Admin Middleware
 
 
@@ -53,3 +63,5 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
 }); // End Group Agent Middleware
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+

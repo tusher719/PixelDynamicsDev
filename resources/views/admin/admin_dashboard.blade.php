@@ -37,6 +37,25 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
+    <style>
+        .table-responsive {
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        div.dataTables_wrapper div.dataTables_filter {
+            text-align: right;
+        }
+
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            margin: 4px 0;
+            white-space: nowrap;
+            justify-content: flex-end;
+        }
+        table.dataTable td.dataTables_empty, table.dataTable th.dataTables_empty{
+            text-align: center
+        }
+    </style>
+
 </head>
 <body>
 	<div class="main-wrapper">
@@ -67,10 +86,15 @@
 	<script src="{{ asset('backend') }}/assets/vendors/core/core.js"></script>
 	<!-- endinject -->
 
-	<!-- Plugin js for this page -->
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('backend') }}/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="{{ asset('backend') }}/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+    <script src="{{ asset('backend') }}/assets/js/data-table.js"></script>
+    <script src="{{ asset('backend') }}/assets/js/validate.min.js"></script>
+
     <script src="{{ asset('backend') }}/assets/vendors/flatpickr/flatpickr.min.js"></script>
     <script src="{{ asset('backend') }}/assets/vendors/apexcharts/apexcharts.min.js"></script>
-	<!-- End plugin js for this page -->
+    <!-- End plugin js for this page -->
 
 	<!-- inject:js -->
 	<script src="{{ asset('backend') }}/assets/vendors/feather-icons/feather.min.js"></script>
@@ -78,7 +102,7 @@
 	<!-- endinject -->
 
 	<!-- Custom js for this page -->
-
+    <script src="{{ asset('backend') }}assets/js/data-table.js"></script>
 	<!-- End custom js for this page -->
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
