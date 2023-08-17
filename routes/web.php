@@ -45,13 +45,22 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
 
-    // Admin User All Route
+    // Portfolio Category All Route
     Route::controller(PortfolioController::class)->group(function(){
         Route::get('/portfolio/category', 'PortfolioCategory')->name('portfolio.category');
         Route::post('/store/category', 'StoreCategory')->name('store.category');
         Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
         Route::post('/update/category', 'UpdateCategory')->name('update.category');
         Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
+
+    // Portfolio Sub-Category All Route
+    Route::controller(PortfolioController::class)->group(function(){
+        Route::get('/portfolio/subcategory', 'PortfolioSubcategory')->name('all.subcategory');
+        Route::post('/store/subcategory', 'StoreSubcategory')->name('store.subcategory');
+        Route::get('/edit/subcategory/{id}', 'EditSubcategory')->name('edit.subcategory');
+        Route::post('/update/subcategory', 'UpdateSubcategory')->name('update.subcategory');
+        Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
     });
 
 }); // End Group Admin Middleware

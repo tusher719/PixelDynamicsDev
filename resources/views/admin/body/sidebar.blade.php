@@ -59,7 +59,7 @@
                     <a href="{{ route('portfolio.category') }}" class="nav-link">Category</a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/ui-components/alerts.html" class="nav-link">Sub-Category</a>
+                    <a href="{{ route('all.subcategory') }}" class="nav-link">Sub-Category</a>
                 </li>
             </ul>
             </div>
