@@ -63,6 +63,21 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
     });
 
+    // Portfolio Manage All Route
+    Route::controller(PortfolioController::class)->group(function(){
+        Route::get('/portfolio/portfolio', 'PortfolioPortfolio')->name('all.portfolio');
+        Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
+
+        Route::get('/get/subcategory/{category_id}', 'GetSbCategory');
+
+        Route::post('/store/portfolio', 'StorePortfolio')->name('store.portfolio');
+        Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
+        Route::post('/update/portfolio/{id}', 'UpdatePortfolio')->name('update.portfolio');
+        Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
+        Route::get('/inactive/{id}', 'InactivePortfolio')->name('inactive.portfolio');
+        Route::get('/active/{id}', 'ActivePortfolio')->name('active.portfolio');
+    });
+
 }); // End Group Admin Middleware
 
 

@@ -61,6 +61,9 @@
                 <li class="nav-item">
                     <a href="{{ route('all.subcategory') }}" class="nav-link">Sub-Category</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('all.portfolio') }}" class="nav-link">Portfolio Manage</a>
+                </li>
             </ul>
             </div>
         </li>
