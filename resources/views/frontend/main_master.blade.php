@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PixelDynamics | Studio</title>
+        <title>@yield('title') | PixelDynamics</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="icon" type="image/x-icon" href="images/logo.png"/>
@@ -25,11 +25,8 @@
             @include('frontend.body.sidebar')
             <!-- END ASIDE -->
             <div id="main">
-                {{-- <div class="portfolio-page"> --}}
 
-                    @yield('content')
-
-                {{-- </div> --}}
+                @yield('content')
 
             </div>
             <!-- END MAIN -->
@@ -63,93 +60,6 @@
         <script src="{{ asset('frontend') }}/assets/js/aos.js"></script>
         <script src="{{ asset('frontend') }}/assets/js/scrollax.min.js"></script>
         <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
-
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const mainCategorySelect = document.getElementById('mainCategorySelect');
-                const subCategorySelect = document.getElementById('subCategorySelect');
-                const galleryItems = document.querySelectorAll('.item');
-                const subFilterContainer = document.querySelector('.sub-filter-container');
-
-                // Sample subcategory data
-                const subcategories = {
-                    nature: ['forest', 'mountain'],
-                    architecture: ['modern', 'historical'],
-                    game: ['ui-ux', 'promo-video','social-media-poster']
-                };
-
-                // Function to populate sub-category select options
-                function populateSubCategoryOptions(selectedMainCategory) {
-                    subCategorySelect.innerHTML = '<option value="all">All</option>';
-
-                    if (selectedMainCategory !== 'all' && subcategories[selectedMainCategory]) {
-                        subcategories[selectedMainCategory].forEach(subcategory => {
-                            const option = document.createElement('option');
-                            option.value = subcategory;
-                            option.textContent = capitalizeFirstLetter(subcategory);
-                            subCategorySelect.appendChild(option);
-                        });
-                    }
-                }
-
-
-                // Capitalize the first letter of a string
-                function capitalizeFirstLetter(string) {
-                    return string.charAt(0).toUpperCase() + string.slice(1);
-                }
-
-                // Set up event listener for main category select
-                mainCategorySelect.addEventListener('change', () => {
-                    const mainCategoryValue = mainCategorySelect.value;
-
-                    // Hide or show sub-category select container
-                    if (mainCategoryValue === 'all') {
-                        subFilterContainer.style.display = 'none';
-                    } else {
-                        subFilterContainer.style.display = 'block';
-                    }
-
-                    // Clear subcategory select and gallery items
-                    subCategorySelect.innerHTML = '<option value="all">All</option>';
-                    galleryItems.forEach(item => {
-                        item.style.display = 'none';
-                    });
-
-                    if (mainCategoryValue === 'all') {
-                        // Show all gallery items
-                        galleryItems.forEach(item => {
-                            item.style.display = 'block';
-                        });
-                    } else {
-                        // Populate subcategory options and show filtered items
-                        populateSubCategoryOptions(mainCategoryValue);
-                        galleryItems.forEach(item => {
-                            const itemCategories = item.classList;
-                            if (itemCategories.contains(mainCategoryValue)) {
-                                item.style.display = 'block';
-                            }
-                        });
-                    }
-                });
-
-                // Set up event listener for subcategory select
-                subCategorySelect.addEventListener('change', () => {
-                    const mainCategoryValue = mainCategorySelect.value;
-                    const subCategoryValue = subCategorySelect.value;
-
-                    galleryItems.forEach(item => {
-                        const itemCategories = item.classList;
-                        if ((mainCategoryValue === 'all' || itemCategories.contains(mainCategoryValue)) &&
-                        (subCategoryValue === 'all' || itemCategories.contains(subCategoryValue))) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        </script>
 
     </body>
 </html>

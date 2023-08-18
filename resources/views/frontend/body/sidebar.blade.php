@@ -12,7 +12,7 @@
     <nav id="main-menu" role="navigation">
         <ul data-aos="fade-right">
             <li>
-                <a href="portfolio.html">
+                <a href="{{ route('portfolio') }}">
                     <i class="fa-solid fa-grip-lines"></i>
                     Portfolio
                 </a>

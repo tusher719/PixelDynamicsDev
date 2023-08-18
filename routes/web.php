@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Frontend\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,10 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 
+
+// Frontend All Controller
+Route::controller(IndexController::class)->group(function(){
+
+    Route::get('/portfolio', 'Portfolio')->name('portfolio');
+
+});
