@@ -11,7 +11,7 @@
     </h1>
     <nav id="main-menu" role="navigation">
         <ul data-aos="fade-right">
-            <li>
+            <li class="@yield('classes')">
                 <a href="{{ route('portfolio') }}">
                     <i class="fa-solid fa-grip-lines"></i>
                     Portfolio
