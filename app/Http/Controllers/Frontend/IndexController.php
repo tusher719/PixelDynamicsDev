@@ -17,4 +17,37 @@ class IndexController extends Controller
         $portfolio = PortfolioManage::all();
         return view('frontend.portfolio.portfolio', compact('category', 'subcategory', 'portfolio'));
     } // End Method
+
+
+
+    // Service Page View
+    public function Services() {
+        return view('frontend.services.service');
+    }
+
+
+    // Service Page View
+    public function Team() {
+        return view('frontend.teams.team');
+    }
+
+
+    // Service Page View
+    public function Blog() {
+        return view('frontend.blog.blog');
+    }
+
+
+    // Service Page View
+    public function Contact() {
+        return view('frontend.contacts.contact');
+    }
+
+
+    // Service Page View
+    public function BlogMain() {
+        return view('frontend.blog.blog_main');
+    }
+
+
 }

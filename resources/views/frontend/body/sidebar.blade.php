@@ -11,26 +11,26 @@
     </h1>
     <nav id="main-menu" role="navigation">
         <ul data-aos="fade-right">
-            <li class="@yield('classes')">
+            <li class="@yield('portfolio')">
                 <a href="{{ route('portfolio') }}">
                     <i class="fa-solid fa-grip-lines"></i>
                     Portfolio
                 </a>
             </li>
-            <li>
-                <a href="services.html">
+            <li class="@yield('service')">
+                <a href="{{ route('services') }}">
                     <i class="fa-solid fa-box"></i>
                     Services
                 </a>
             </li>
-            <li>
-                <a href="team.html">
+            <li class="@yield('team')">
+                <a href="{{ route('team') }}">
                     <i class="fa-solid fa-shapes"></i>
                     Team
                 </a>
             </li>
-            <li>
-                <a href="blog.html">
+            <li class="@yield('blog')">
+                <a href="{{ route('blog') }}">
                     <i class="fa-solid fa-newspaper"></i>
                     Blog
                 </a>
@@ -39,7 +39,7 @@
     </nav>
     <div class="sidebar-footer" data-aos="fade-down">
         <div class="social-main">
-            <a href="contact.html" class="heading">
+            <a href="{{ route('contact') }}" class="heading">
                 <i class="fa-solid fa-envelope"></i>
                 Contact Us
             </a>

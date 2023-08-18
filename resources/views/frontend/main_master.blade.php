@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="{{ asset('frontend') }}/asset/css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/owl.carousel.min.css"/>
         <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/animate.css"/>
         <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/owl.theme.default.min.css"/>
         <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/magnific-popup.css"/>

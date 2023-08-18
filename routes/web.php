@@ -96,4 +96,10 @@ Route::controller(IndexController::class)->group(function(){
 
     Route::get('/portfolio', 'Portfolio')->name('portfolio');
 
+    Route::get('/services', 'Services')->name('services');
+    Route::get('/team', 'Team')->name('team');
+    Route::get('/blog', 'Blog')->name('blog');
+    Route::get('/blog/main', 'BlogMain')->name('blog.main');
+    Route::get('/contact', 'Contact')->name('contact');
+
 });

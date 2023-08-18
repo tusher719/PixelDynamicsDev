@@ -2,7 +2,7 @@
 @section('title')
     Portfolio
 @endsection
-@section('classes')
+@section('portfolio')
 active
 @endsection
 @section('content')
