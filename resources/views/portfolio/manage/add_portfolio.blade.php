@@ -28,6 +28,15 @@
                             @csrf
 
                             <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Portfolio Name</label>
+                                        <input type="text" name="portfolio_name" class="form-control" placeholder="Enter Portfolio name">
+                                        @error('portfolio_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Category Name</label>
@@ -45,7 +54,7 @@
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="mb-3">
-                                        <label class="form-label">subCategory Name</label>
+                                        <label class="form-label">SubCategory Name</label>
                                         <select name="subcategory_id" class="form-select">
 
                                         </select>
@@ -57,20 +66,28 @@
 
                                 <div class="col-lg-6 col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label" for="formFile">File upload</label>
+                                        <label class="form-label" for="formFile">File upload (Max file size: 2MB)</label>
                                         <input name="portfolio_img" class="form-control" type="file" id="photo">
                                         @error('portfolio_img')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-
-
                                 </div>
+                                
                                 <div class="col-lg-6 col-md-12">
                                     <div class="mb-3">
                                         <img id="showImage" class="wd-300" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile">
                                     </div>
                                 </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <label class="form-label" for="formFile">Post Details</label>
+                                    <div class="mb-3">
+                                            <textarea id="editor1" name="portfolio_details" rows="10" cols="80">
+                                                Post Details
+                                            </textarea>
+                                    </div>
+                                        </div>
                             </div>
 
 

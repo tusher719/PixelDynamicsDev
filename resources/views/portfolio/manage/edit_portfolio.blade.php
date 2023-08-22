@@ -29,6 +29,15 @@
                             <input type="hidden" name="id" value="{{ $portfolio->id }}">
 
                             <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Portfolio Name</label>
+                                        <input type="text" name="portfolio_name" class="form-control" value="{{ $portfolio->portfolio_name }}">
+                                        @error('portfolio_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label">Category Name</label>

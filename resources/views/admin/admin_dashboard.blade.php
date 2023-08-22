@@ -90,6 +90,11 @@
     <!-- Plugin js for this page -->
     <script src="{{ asset('backend') }}/assets/vendors/datatables.net/jquery.dataTables.js"></script>
     <script src="{{ asset('backend') }}/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+    
+    {{-- Ck Editor --}}
+    <script src="{{ asset('backend') }}/assets/vendors/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('backend') }}/assets/js/editor.js"></script>
+
     <script src="{{ asset('backend') }}/assets/js/data-table.js"></script>
     <script src="{{ asset('backend') }}/assets/js/validate.min.js"></script>
 
@@ -103,7 +108,7 @@
 	<!-- endinject -->
 
 	<!-- Custom js for this page -->
-    <script src="{{ asset('backend') }}assets/js/data-table.js"></script>
+    {{-- <script src="{{ asset('backend') }}assets/js/data-table.js"></script> --}}
 	<!-- End custom js for this page -->
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

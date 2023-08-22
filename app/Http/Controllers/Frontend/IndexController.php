@@ -14,7 +14,7 @@ class IndexController extends Controller
     public function Portfolio() {
         $category = PortfolioCategory::all();
         $subcategory = PortfolioSubCategory::all();
-        $portfolio = PortfolioManage::all();
+        $portfolio = PortfolioManage::where('status',1)->latest()->get();
         return view('frontend.portfolio.portfolio', compact('category', 'subcategory', 'portfolio'));
     } // End Method
 

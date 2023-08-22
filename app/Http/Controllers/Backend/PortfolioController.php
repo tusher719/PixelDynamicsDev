@@ -192,7 +192,7 @@ class PortfolioController extends Controller
     public function PortfolioPortfolio(){
         $category = PortfolioCategory::all();
         $subcategory = PortfolioSubCategory::all();
-        $portfolio = PortfolioManage::all();
+        $portfolio = PortfolioManage::latest()->get();
         Return view('portfolio.manage.portfolio_manage', compact('category', 'subcategory','portfolio'));
     } // End Method
 
@@ -220,6 +220,7 @@ class PortfolioController extends Controller
 
         // dd($request->all());
         $request->validate([
+            'portfolio_name' => 'required',
             'category_id' => 'required',
             'subcategory_id' => 'required',
             'portfolio_img' => 'required|mimes:jpeg,png,jpg,gif|max:1024',
@@ -230,8 +231,11 @@ class PortfolioController extends Controller
 
         $portfolio = new PortfolioManage();
         $portfolio->photo = $imageName;
+        $portfolio->portfolio_name = $request->portfolio_name;
+        $portfolio->portfolio_name_slug = strtolower(str_replace(' ', '-',$request->portfolio_name));
         $portfolio->category_id = $request->category_id;
         $portfolio->subcategory_id = $request->subcategory_id;
+        $portfolio->portfolio_details = $request->portfolio_details;
         $portfolio->status = 1;
 
         $portfolio->save();
@@ -276,6 +280,8 @@ class PortfolioController extends Controller
             $portfolio->photo = $imageName;
         }
 
+        $portfolio->portfolio_name = $request->portfolio_name;
+        $portfolio->portfolio_name_slug = strtolower(str_replace(' ', '-',$request->portfolio_name));
         $portfolio->category_id = $request->category_id;
         $portfolio->subcategory_id = $request->subcategory_id;
 

@@ -78,7 +78,7 @@
                             @enderror
 						</div>
                         <div class="mb-3">
-							<label class="form-label">subCategory Name</label>
+							<label class="form-label">SubCategory Name</label>
 							<input type="text" name="subcategory_name" class="form-control" placeholder="Enter subcategory name">
                             @error('subcategory_name')
                                 <span class="text-danger">{{ $message }}</span>

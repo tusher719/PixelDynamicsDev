@@ -30,9 +30,10 @@
                                     <tr>
                                         <th>Sl.</th>
                                         <th>Image</th>
+                                        <th>Portfolio name</th>
                                         <th>Category name</th>
                                         <th>SubCategory name</th>
-                                        {{-- <th>Status</th> --}}
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -43,15 +44,16 @@
                                         <td>
                                             <img style="width: 150px; height: 100px; object-fit:cover; border-radius:0;" src="{{ (!empty($item->photo)) ? url('uploads/portfolios/'.$item->photo) : url('uploads/no_image.jpg') }}" alt="profile">
                                         </td>
+                                        <td><h5>{{ $item->portfolio_name }}</h5></td>
                                         <td><h5>{{ $item->category->category_name }}</h5></td>
                                         <td><h5>{{ $item->subcategory->subcategory_name }}</h5></td>
-                                        {{-- <td>
+                                        <td>
                                             @if ($item->status == 1)
                                                 <span class="badge border border-success text-success">Active</span>
                                             @else
                                                 <span class="badge border border-warning text-warning">Inactive</span>
                                             @endif
-                                        </td> --}}
+                                        </td>
                                         <td>
                                             <a href="{{ route('edit.portfolio',$item->id) }}" class="btn btn-inverse-info btn-sm">
                                                 <i class="btn-icon-prepend" data-feather="edit"></i>
@@ -61,7 +63,7 @@
                                                 <i data-feather="trash-2"></i>
                                                 Delete
                                             </a>
-                                            {{-- @if($item->status == 1)
+                                            @if($item->status == 1)
                                                 <a href="{{ route('inactive.portfolio',$item->id) }}" class="btn btn-inverse-warning btn-sm" title="Inactive Now">
                                                     <i class="fa fa-arrow-down"></i>
                                                     Inactive
@@ -71,7 +73,7 @@
                                                     <i class="fa fa-arrow-up"></i>
                                                     Active
                                                 </a>
-                                            @endif --}}
+                                            @endif
                                         </td>
                                     </tr>
                                     @endforeach
