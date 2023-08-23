@@ -70,7 +70,6 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6 col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label" for="formFile">File upload</label>

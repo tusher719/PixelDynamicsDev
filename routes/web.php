@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Frontend\IndexController;
 
 /*
@@ -64,6 +65,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/subcategory/{id}', 'DeleteSubcategory')->name('delete.subcategory');
     });
 
+
+
     // Portfolio Manage All Route
     Route::controller(PortfolioController::class)->group(function(){
         Route::get('/portfolio/portfolio', 'PortfolioPortfolio')->name('all.portfolio');
@@ -77,6 +80,20 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
         Route::get('/inactive/{id}', 'InactivePortfolio')->name('inactive.portfolio');
         Route::get('/active/{id}', 'ActivePortfolio')->name('active.portfolio');
+    });
+
+
+
+    // Team Manage All Route
+    Route::controller(TeamController::class)->group(function(){
+        Route::get('/all/carousel/manage', 'AllCarouselManage')->name('all.carousel.manage');
+        Route::get('/add/carousel', 'AddCarousel')->name('add.carousel');
+        Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
+        Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
+        Route::post('/update/carousel/{id}', 'UpdateCarousel')->name('update.carousel');
+        Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
+        Route::get('/inactive/{id}', 'InactiveCarousel')->name('inactive.carousel');
+        Route::get('/active/{id}', 'ActiveCarousel')->name('active.carousel');
     });
 
 }); // End Group Admin Middleware
