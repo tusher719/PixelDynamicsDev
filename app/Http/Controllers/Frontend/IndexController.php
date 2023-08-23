@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
+use App\Models\TeamCarousel;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -34,7 +35,8 @@ class IndexController extends Controller
 
     // Service Page View
     public function Team() {
-        return view('frontend.teams.team');
+        $teamcaro = TeamCarousel::where('status',1)->get();
+        return view('frontend.teams.team', compact('teamcaro'));
     }
 
 

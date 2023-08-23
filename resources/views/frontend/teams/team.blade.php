@@ -15,41 +15,43 @@ active
         </div>
         
         <div class="owl-carousel carousel-one owl-theme">
+            @foreach ($teamcaro as $item)
             <div class="item">
 
                 <div class="container-fluid">
                     <div class="row flex-column-reverse flex-lg-row">
                         <div class="col-lg-7 col-md-12"> 
                             
-                            <h2 class="member-name">Koushik Sarker</h2>
-                            <p class="sub-title">A multi-award-winning designer, certified by Huawei and Adobe.</p>
+                            <h2 class="member-name">{{ $item->name }}</h2>
+                            <p class="sub-title">{{ $item->title }}</p>
                             
                             <div class="experience">
                                 <div class="first-exp">
-                                    <h4>Industry Experience</h4>
-                                    <h2>7+ Years</h2>
+                                    <h4>{{ $item->industry }}</h4>
+                                    <h2>{{ $item->industry_experience }} Years</h2>
                                 </div>
                                 <div class="second-exp">
-                                    <h4>Area of Expertise</h4>
-                                    <h2>Game UI UX , VFX</h2>
+                                    <h4>{{ $item->area }}</h4>
+                                    <h2>{{ $item->area_experience }}</h2>
                                 </div>
                             </div>
 
                             <div class="description">
-                                <p class="desc1">With an  impressive track record as the lead Game UI/UX Designer for the acclaimed Tactical FPS, Zero Hour, they also made significant contributions in VFX and Marketing designs within the gaming industry.</p>
-                                <p class="desc2">Got <strong>Honor Master Designer</strong> award. And a Accredited Designer in Huawei Developer Allaiance.</p>
+                                <p class="desc1">{!! $item->description !!}</p>
+                                <p class="desc2">{!! $item->description2 !!}</p>
                             </div>
                             
                         </div>
                         <div class="col-lg-5">
-                            <div class="background-img" style="background-image: url({{ asset('frontend') }}/assets/images/Layer_1.png); background-repeat: no-repeat; background-position: center;">
+                            <div class="background-img" style="background-image: url({{ url('uploads/members/carousel/'.$item->member_img) }}); background-repeat: no-repeat; background-position: center;">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
             <!-- End Carousel Item class -->
-            <div class="item">
+            {{-- <div class="item">
 
                 <div class="container-fluid">
                     <div class="row flex-column-reverse flex-lg-row">
@@ -80,7 +82,7 @@ active
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- End Carousel Item class -->
 
         </div>
