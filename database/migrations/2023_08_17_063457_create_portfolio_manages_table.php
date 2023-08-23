@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->integer('subcategory_id');
+            // $table->string('portfolio_name');
             $table->string('photo')->nullable();
+            // $table->text('portfolio_details')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
         });

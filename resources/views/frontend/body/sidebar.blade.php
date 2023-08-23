@@ -1,5 +1,5 @@
 <aside id="aside" role="complementary" class="js-fullheight">
-    <h1 id="logo" data-aos="zoom-in">
+    <h1 id="logo">
         <a href="{{ url('/') }}" class="logo-con">
             <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/logo-2.gif" alt=""/>
             <div class="logoTxt">
@@ -10,7 +10,7 @@
         <p class="camption">A studio powered by industry leading professionals.</p>
     </h1>
     <nav id="main-menu" role="navigation">
-        <ul data-aos="fade-right">
+        <ul>
             <li class="@yield('portfolio')">
                 <a href="{{ route('portfolio') }}">
                     <i class="fa-solid fa-grip-lines"></i>
@@ -37,7 +37,7 @@
             </li>
         </ul>
     </nav>
-    <div class="sidebar-footer" data-aos="fade-down">
+    <div class="sidebar-footer">
         <div class="social-main">
             <a href="{{ route('contact') }}" class="heading">
                 <i class="fa-solid fa-envelope"></i>
@@ -66,13 +66,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="copyright-con">
-                <p class="col-lg-12 col-sm-12 footer-text">
-                    Design & Developed
-                    <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                    <a href="https://tusherdev.com" target="_blank">Tusher</a>
-                </p>
             </div>
         </div>
     </div>

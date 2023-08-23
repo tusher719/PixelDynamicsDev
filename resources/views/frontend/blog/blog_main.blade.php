@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="blog-title">
-                                    <a href="blog.html">
+                                    <a href="{{ route('blog') }}">
                                         <i class="fa-solid fa-angle-left"></i>
                                         <h4>Blog Tilte</h4>
                                     </a>

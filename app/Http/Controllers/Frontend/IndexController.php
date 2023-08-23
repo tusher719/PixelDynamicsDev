@@ -19,6 +19,12 @@ class IndexController extends Controller
     } // End Method
 
 
+    public function PortfolioPost($id) {
+        $post = PortfolioManage::findOrFail($id);
+        return view('frontend.portfolio.portfolio_post', compact('post'));
+    }
+
+
 
     // Service Page View
     public function Services() {

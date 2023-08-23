@@ -83,8 +83,8 @@
                                 <div class="col-lg-12 col-md-12">
                                     <label class="form-label" for="formFile">Post Details</label>
                                     <div class="mb-3">
-                                            <textarea id="editor1" name="portfolio_details" rows="10" cols="80">
-                                                Post Details
+                                            <textarea id="editor1" name="portfolio_details" rows="20" cols="15">
+                                                Portfolio Details
                                             </textarea>
                                     </div>
                                         </div>

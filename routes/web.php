@@ -95,6 +95,7 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 Route::controller(IndexController::class)->group(function(){
 
     Route::get('/portfolio', 'Portfolio')->name('portfolio');
+    Route::get('/portfolio/post/{id}', 'PortfolioPost')->name('portfolio.post');
 
     Route::get('/services', 'Services')->name('services');
     Route::get('/team', 'Team')->name('team');

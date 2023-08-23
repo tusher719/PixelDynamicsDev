@@ -37,7 +37,7 @@ active
         <div class="gallery">
             @foreach ($portfolio as $item)
             <div class="item {{ $item->category->category_slug }} {{ $item->subcategory->subcategory_slug }}">
-                <a href="#">
+                <a href="{{ route('portfolio.post',$item->id) }}">
                     <img class="img-fluid" src="{{ url('uploads/portfolios/'.$item->photo) }}" alt="Nature Forest 1">
                 </a>
             </div>
