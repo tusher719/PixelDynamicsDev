@@ -266,6 +266,7 @@ class PortfolioController extends Controller
     public function UpdatePortfolio(Request $request, $id){
 
         $request->validate([
+            'portfolio_name' => 'required',
             'category_id' => 'required',
             'subcategory_id' => 'required',
             'portfolio_img' => 'nullable|mimes:jpeg,png,jpg,gif|max:2048',
@@ -284,6 +285,7 @@ class PortfolioController extends Controller
         $portfolio->portfolio_name_slug = strtolower(str_replace(' ', '-',$request->portfolio_name));
         $portfolio->category_id = $request->category_id;
         $portfolio->subcategory_id = $request->subcategory_id;
+        $portfolio->portfolio_details = $request->portfolio_details;
 
         $portfolio->save();
 

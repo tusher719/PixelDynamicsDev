@@ -90,6 +90,15 @@
                                         <img id="showImage" class="wd-300" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile">
                                     </div>
                                 </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <label class="form-label" for="formFile">Post Details</label>
+                                    <div class="mb-3">
+                                            <textarea id="editor1" name="portfolio_details" rows="20" cols="15">
+                                                {{ $portfolio->portfolio_details }}
+                                            </textarea>
+                                    </div>
+                                </div>
                             </div>
 
 

@@ -87,7 +87,7 @@
                                                 Portfolio Details
                                             </textarea>
                                     </div>
-                                        </div>
+                                </div>
                             </div>
 
 
