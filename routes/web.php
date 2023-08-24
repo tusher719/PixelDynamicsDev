@@ -124,6 +124,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/Offers/active/{id}', 'ActiveOffers')->name('active.offers');
     });
 
+    // All Subscription Manage All Route
+    Route::controller(ServiceController::class)->group(function(){
+        Route::get('/all/subscription/manage', 'AllSubscription')->name('all.subscription');
+        Route::get('/add/subscription', 'AddSubscription')->name('add.subscription');
+        Route::post('/store/subscription', 'StoreSubscription')->name('store.subscription');
+        Route::get('/edit/subscription/{id}', 'EditSubscription')->name('edit.subscription');
+        Route::post('/update/subscription', 'UpdateSubscription')->name('update.subscription');
+        Route::get('/delete/subscription/{id}', 'DeleteSubscription')->name('delete.subscription');
+        Route::get('/subscription//inactive/{id}', 'InactiveSubscription')->name('inactive.subscription');
+        Route::get('/subscription//active/{id}', 'ActiveSubscription')->name('active.subscription');
+    });
+
 
 }); // End Group Admin Middleware
 

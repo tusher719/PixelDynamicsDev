@@ -70,7 +70,7 @@
                         <a href="{{ route('all.offers') }}" class="nav-link">Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Subscription</a>
+                        <a href="{{ route('all.subscription') }}" class="nav-link">Subscription</a>
                     </li>
                 </ul>
             </div>
