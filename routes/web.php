@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\TeamMemberController;
 use App\Http\Controllers\Frontend\IndexController;
@@ -108,6 +109,19 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/member/{id}', 'DeleteMember')->name('delete.member');
         Route::get('/member/inactive/{id}', 'InactiveMember')->name('inactive.member');
         Route::get('/member/active/{id}', 'ActiveMember')->name('active.member');
+    });
+
+
+    // All Team Member Manage All Route
+    Route::controller(ServiceController::class)->group(function(){
+        Route::get('/all/Offers/manage', 'AllOffers')->name('all.offers');
+        Route::get('/add/Offers', 'AddOffers')->name('add.offers');
+        Route::post('/store/Offers', 'StoreOffers')->name('store.offers');
+        Route::get('/edit/Offers/{id}', 'EditOffers')->name('edit.offers');
+        Route::post('/update/Offers', 'UpdateOffers')->name('update.offers');
+        Route::get('/delete/Offers/{id}', 'DeleteOffers')->name('delete.offers');
+        Route::get('/Offers/inactive/{id}', 'InactiveOffers')->name('inactive.offers');
+        Route::get('/Offers/active/{id}', 'ActiveOffers')->name('active.offers');
     });
 
 
