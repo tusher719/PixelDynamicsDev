@@ -52,7 +52,7 @@
                 <a href="{{ route('all.carousel.manage') }}" class="nav-link">Team carousel</a>
                 </li>
                 <li class="nav-item">
-                <a href="pages/advanced-ui/sortablejs.html" class="nav-link">Members</a>
+                <a href="{{ route('all.member.manage') }}" class="nav-link">Members</a>
                 </li>
             </ul>
             </div>

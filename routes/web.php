@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\TeamMemberController;
 use App\Http\Controllers\Frontend\IndexController;
 
 /*
@@ -78,8 +79,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
         Route::post('/update/portfolio/{id}', 'UpdatePortfolio')->name('update.portfolio');
         Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
-        Route::get('/inactive/{id}', 'InactivePortfolio')->name('inactive.portfolio');
-        Route::get('/active/{id}', 'ActivePortfolio')->name('active.portfolio');
+        Route::get('/portfolio/inactive/{id}', 'InactivePortfolio')->name('inactive.portfolio');
+        Route::get('/portfolio/active/{id}', 'ActivePortfolio')->name('active.portfolio');
     });
 
 
@@ -92,9 +93,23 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
         Route::post('/update/carousel/{id}', 'UpdateCarousel')->name('update.carousel');
         Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
-        Route::get('/inactive/{id}', 'InactiveCarousel')->name('inactive.carousel');
-        Route::get('/active/{id}', 'ActiveCarousel')->name('active.carousel');
+        Route::get('/carousel//inactive/{id}', 'InactiveCarousel')->name('inactive.carousel');
+        Route::get('/carousel//active/{id}', 'ActiveCarousel')->name('active.carousel');
     });
+
+
+    // Team Carousel Manage All Route
+    Route::controller(TeamMemberController::class)->group(function(){
+        Route::get('/all/member/manage', 'AllMemberManage')->name('all.member.manage');
+        Route::get('/add/member', 'AddMember')->name('add.member');
+        Route::post('/store/member', 'StoreMember')->name('store.member');
+        Route::get('/edit/member/{id}', 'EditMember')->name('edit.member');
+        Route::post('/update/member/{id}', 'UpdateMember')->name('update.member');
+        Route::get('/delete/member/{id}', 'DeleteMember')->name('delete.member');
+        Route::get('/member/inactive/{id}', 'InactiveMember')->name('inactive.member');
+        Route::get('/member/active/{id}', 'ActiveMember')->name('active.member');
+    });
+
 
 }); // End Group Admin Middleware
 
