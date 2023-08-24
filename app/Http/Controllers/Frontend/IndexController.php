@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
+use App\Models\ServiceOffers;
 use App\Models\TeamCarousel;
 use App\Models\TeamMembers;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class IndexController extends Controller
 
     // Service Page View
     public function Services() {
-        return view('frontend.services.service');
+        $offers = ServiceOffers::where('status',1)->get();
+        return view('frontend.services.service', compact('offers'));
     }
 
 

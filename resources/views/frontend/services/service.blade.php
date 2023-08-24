@@ -24,142 +24,66 @@ active
         </div>
 
         <div class="row service-box-con">
+            @foreach ($offers as $item)
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="card-con w-100">
                     <div class="card-body d-flex flex-column">
                         <div class="service-card-heading">
                             <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">User Interface</h5>                                            
+                            <h5 class="title">{{ $item->title }}</h5>                                            
                         </div>
                         <ul>
-                            <li>App UI</li>
-                            <li>Website UI</li>
-                            <li>AR/ VR UI</li>
-                            <li>Interactive Prototype</li>
-                            <li>UI Animation</li>
-                            <li>Design System</li>
-                            <li>Landing Page Video</li>
-                            <li>Emoji Design</li>
+                            @if($item->offer == true)
+                                <li>{{ $item->offer }}</li>
+                            @endif
+                            @if($item->offer2 == true)
+                                <li>{{ $item->offer2 }}</li>
+                            @endif
+                            @if($item->offer3 == true)
+                                <li>{{ $item->offer3 }}</li>
+                            @endif
+                            @if($item->offer4 == true)
+                                <li>{{ $item->offer4 }}</li>
+                            @endif
+                            @if($item->offer5 == true)
+                                <li>{{ $item->offer5 }}</li>
+                            @endif
+                            @if($item->offer6 == true)
+                                <li>{{ $item->offer6 }}</li>
+                            @endif
+                            @if($item->offer7 == true)
+                                <li>{{ $item->offer7 }}</li>
+                            @endif
+                            @if($item->offer8 == true)
+                                <li>{{ $item->offer8 }}</li>
+                            @endif
+                            @if($item->offer9 == true)
+                                <li>{{ $item->offer9 }}</li>
+                            @endif
+                            @if($item->offer10 == true)
+                                <li>{{ $item->offer10 }}</li>
+                            @endif
+                            @if($item->offer11 == true)
+                                <li>{{ $item->offer11 }}</li>
+                            @endif
+                            @if($item->offer12 == true)
+                                <li>{{ $item->offer12 }}</li>
+                            @endif
+                            @if($item->offer13 == true)
+                                <li>{{ $item->offer13 }}</li>
+                            @endif
+                            @if($item->offer14 == true)
+                                <li>{{ $item->offer14 }}</li>
+                            @endif
+                            @if($item->offer15 == true)
+                                <li>{{ $item->offer15 }}</li>
+                            @endif
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">User Experience</h5>                                            
-                        </div>
-                        <ul>
-                            <li>UX Strategy</li>
-                            <li>Research</li>
-                            <li>Information Architecture</li>
-                            <li>Usability Testing</li>
-                            <li>Performance Monitoring</li>
-                            <li>User Flow</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">Game</h5>                                            
-                        </div>
-                        <ul>
-                            <li>Game UI/UX ( HUD, Menu...)</li>
-                            <li>FUI & UI Animation</li>
-                            <li>UI Implementation</li>
-                            <li>Promo Videos</li>
-                            <li>Steam / Epic Store Page Design</li>
-                            <li>Design System</li>
-                            <li>Social Media Poster</li>
-                            <li>E-sports Design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">Branding</h5>                                            
-                        </div>
-                        <ul>
-                            <li>Logo</li>
-                            <li>Brand Strategy</li>
-                            <li>Stationaries</li>
-                            <li>Banners</li>
-                            <li>Social Media Post</li>
-                            <li>T-shirt, Jursey</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">Video Production</h5>                                            
-                        </div>
-                        <ul>
-                            <li>App UI</li>
-                            <li>Website UI</li>
-                            <li>AR/ VR UI</li>
-                            <li>Interactive Prototype</li>
-                            <li>UI Animation</li>
-                            <li>Design System</li>
-                            <li>Landing Page Video</li>
-                            <li>Emoji Design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">3d & Game Design</h5>                                            
-                        </div>
-                        <ul>
-                            <li>App UI</li>
-                            <li>Website UI</li>
-                            <li>AR/ VR UI</li>
-                            <li>Interactive Prototype</li>
-                            <li>UI Animation</li>
-                            <li>Design System</li>
-                            <li>Landing Page Video</li>
-                            <li>Emoji Design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div class="card-con w-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="service-card-heading">
-                            <i class="fa-solid fa-square-full icon"></i>
-                            <h5 class="title">Digital Marketing</h5>                                            
-                        </div>
-                        <ul>
-                            <li>App UI</li>
-                            <li>Website UI</li>
-                            <li>AR/ VR UI</li>
-                            <li>Interactive Prototype</li>
-                            <li>UI Animation</li>
-                            <li>Design System</li>
-                            <li>Landing Page Video</li>
-                            <li>Emoji Design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
 
     </div>
