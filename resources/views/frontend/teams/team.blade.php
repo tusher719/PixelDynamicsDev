@@ -139,245 +139,66 @@ active
     <section class="ftco-section main-team">
         <div class="container-fluid">
             <div class="row bottom-section">
+                @foreach ($members as $item)
                 <div class="col-lg-3 col-md-4">
                     <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-1.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset(url('uploads/members/Team/'.$item->member_img)) }}" alt="">
                         <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
+                            <h3>{{ $item->name }}</h3>
+                            <h5>{{ $item->position }}</h5>
                         </div>
                         <div class="team-item-overlay">
                             <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
+                                <h2 class="title">{{ $item->name }}</h2>
+                                <p>{{ $item->role }}</p>
                                 <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
+                                @if ($item->job == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job }}</p>
+                                    </div>
+                                @else
+                                @endif
+                                @if ($item->job2 == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job2 }}</p>
+                                    </div>
+                                @else
+                                @endif
+                                @if ($item->job3 == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job3 }}</p>
+                                    </div>
+                                @else
+                                @endif
+                                @if ($item->job4 == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job4 }}</p>
+                                    </div>
+                                @else
+                                @endif
+                                @if ($item->job5 == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job5 }}</p>
+                                    </div>
+                                @else
+                                @endif
+                                @if ($item->job6 == true)
+                                    <div class="work">
+                                        <i class="fa-solid fa-square-full"></i>
+                                        <p>{{ $item->job6 }}</p>
+                                    </div>
+                                @else
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-2.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-1.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-2.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 ">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-1.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-2.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-1.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-2.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-1.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="col-lg-3 col-md-4">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/assets/images/profile-2.jpg" alt="">
-                        <div class="img-title">
-                            <h3>Koushik Sarker</h3>
-                            <h5>Game UI UX Designer</h5>
-                        </div>
-                        <div class="team-item-overlay">
-                            <div class="content">
-                                <h2 class="title">Pixel Dynamics</h2>
-                                <p>Position <span>/</span> Role</p>
-                                <div class="line"></div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Worked with Industry tech Giants.</p>
-                                </div>
-                                <div class="work">
-                                    <i class="fa-solid fa-square-full"></i>
-                                    <p>Got Best Designer Award 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

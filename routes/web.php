@@ -98,7 +98,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
 
-    // Team Carousel Manage All Route
+    // All Team Member Manage All Route
     Route::controller(TeamMemberController::class)->group(function(){
         Route::get('/all/member/manage', 'AllMemberManage')->name('all.member.manage');
         Route::get('/add/member', 'AddMember')->name('add.member');
