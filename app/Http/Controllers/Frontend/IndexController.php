@@ -7,6 +7,7 @@ use App\Models\PortfolioCategory;
 use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
 use App\Models\ServiceOffers;
+use App\Models\ServiceSubcription;
 use App\Models\TeamCarousel;
 use App\Models\TeamMembers;
 use Illuminate\Http\Request;
@@ -32,7 +33,8 @@ class IndexController extends Controller
     // Service Page View
     public function Services() {
         $offers = ServiceOffers::where('status',1)->get();
-        return view('frontend.services.service', compact('offers'));
+        $subscription = ServiceSubcription::where('status',1)->get();
+        return view('frontend.services.service', compact('offers','subscription'));
     }
 
 

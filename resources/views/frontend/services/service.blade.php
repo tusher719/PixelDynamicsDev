@@ -113,70 +113,69 @@ active
                     <h4 class="monthly-pay-title">Subscription Plans</h4>
                     <p class="monthly-pay-desc">Fixed Monthly Cost for All Your Tasks</p>
                 </div>
+                @foreach ($subscription as $item)
                 <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
                     <div class="card w-100">
                         <div class="card-body d-flex flex-column">
                             <div class="header">
-                                <h5 class="title text-capitalize">Basic</h5>
-                                <h6 class="price">495 usd</h6>
+                                <h5 class="title text-capitalize">{{ $item->title }}</h5>
+                                <h6 class="price">{{ $item->amount }} usd</h6>
                             </div>
-                            <p class="sub-title">Pay USD 495 once,</p>
+                            <p class="sub-title">Pay USD {{ $item->amount }} once,</p>
                             <p class="sub-title"> Get service full month.</p>
                             
                             <ul class="list-item">
-                                <li>1 Senior Designer & 1 Junior Designer</li>
-                                <li>1 Request at a time Approx.</li>
-                                <li>Delivery 48 hours</li>
-                                <li>No Hidden Charge.</li>
-                                <li>Branding, Web and App UI/UX, Digital marketing, and Social Media Posts are included.</li>
-                                <li>No Hidden Charge.</li>
+                                @if($item->offer == true)
+                                <li>{{ $item->offer }}</li>
+                            @endif
+                            @if($item->offer2 == true)
+                                <li>{{ $item->offer2 }}</li>
+                            @endif
+                            @if($item->offer3 == true)
+                                <li>{{ $item->offer3 }}</li>
+                            @endif
+                            @if($item->offer4 == true)
+                                <li>{{ $item->offer4 }}</li>
+                            @endif
+                            @if($item->offer5 == true)
+                                <li>{{ $item->offer5 }}</li>
+                            @endif
+                            @if($item->offer6 == true)
+                                <li>{{ $item->offer6 }}</li>
+                            @endif
+                            @if($item->offer7 == true)
+                                <li>{{ $item->offer7 }}</li>
+                            @endif
+                            @if($item->offer8 == true)
+                                <li>{{ $item->offer8 }}</li>
+                            @endif
+                            @if($item->offer9 == true)
+                                <li>{{ $item->offer9 }}</li>
+                            @endif
+                            @if($item->offer10 == true)
+                                <li>{{ $item->offer10 }}</li>
+                            @endif
+                            @if($item->offer11 == true)
+                                <li>{{ $item->offer11 }}</li>
+                            @endif
+                            @if($item->offer12 == true)
+                                <li>{{ $item->offer12 }}</li>
+                            @endif
+                            @if($item->offer13 == true)
+                                <li>{{ $item->offer13 }}</li>
+                            @endif
+                            @if($item->offer14 == true)
+                                <li>{{ $item->offer14 }}</li>
+                            @endif
+                            @if($item->offer15 == true)
+                                <li>{{ $item->offer15 }}</li>
+                            @endif
                             </ul>
                             <a href="#" class="mt-auto align-self-start">Book a Call</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
-                    <div class="card w-100">
-                        <div class="card-body d-flex flex-column">
-                            <div class="header">
-                                <h5 class="title text-capitalize">standard</h5>
-                                <h6 class="price">495 usd</h6>
-                            </div>
-                            <p class="sub-title">Pay USD 495 once,</p>
-                            <p class="sub-title"> Get service full month.</p>
-                            
-                            <ul class="list-item">
-                                <li>1 Senior Designer & 1 Junior Designer</li>
-                                <li>1 Request at a time Approx.</li>
-                                <li>Delivery 48 hours</li>
-                                <li>No Hidden Charge.</li>
-                                <li>Branding, Web and App UI/UX, Digital marketing, and Social Media Posts are included.</li>
-                                <li>No Hidden Charge.</li>
-                            </ul>
-                            <a href="#" class="mt-auto align-self-start">Book a Call</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-3 d-flex align-items-stretch">
-                    <div class="card w-100">
-                        <div class="card-body d-flex flex-column">
-                            <div class="header">
-                                <h5 class="title text-capitalize">advanced</h5>
-                                <h6 class="price">495 usd</h6>
-                            </div>
-                            <p class="sub-title">Pay USD 495 once,</p>
-                            <p class="sub-title"> Get service full month.</p>
-                            
-                            <ul class="list-item">
-                                <li>1 Senior Designer & 1 Junior Designer</li>
-                                <li>1 Request at a time Approx.</li>
-                                <li>Delivery 48 hours</li>
-                                <li>No Hidden Charge.</li>
-                            </ul>
-                            <a href="#" class="mt-auto align-self-start">Book a Call</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
 
