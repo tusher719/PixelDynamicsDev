@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\Backend\PhotosController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\TeamController;
@@ -134,6 +135,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/subscription/{id}', 'DeleteSubscription')->name('delete.subscription');
         Route::get('/subscription//inactive/{id}', 'InactiveSubscription')->name('inactive.subscription');
         Route::get('/subscription//active/{id}', 'ActiveSubscription')->name('active.subscription');
+    });
+
+
+    // Photos Manage All Route
+    Route::controller(PhotosController::class)->group(function(){
+        Route::get('/all/photos/manage', 'AllPhotos')->name('all.photos');
+        Route::post('/store/photos', 'StorePhotos')->name('store.photos');
+        Route::get('/delete/photos/{id}', 'DeletePhotos')->name('delete.photos');
     });
 
 

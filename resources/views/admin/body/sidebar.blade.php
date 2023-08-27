@@ -75,6 +75,12 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('all.photos') }}" class="nav-link">
+            <i class="link-icon" data-feather="hash"></i>
+            <span class="link-title">photos</span>
+            </a>
+        </li>
 
 
         <li class="nav-item nav-category">Docs</li>
