@@ -76,6 +76,26 @@
             </div>
         </li>
         <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">
+                <i class="link-icon" data-feather="layout"></i>
+                <span class="link-title">Blog</span>
+                <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="tables">
+                <ul class="nav sub-menu">
+                    <li class="nav-item">
+                        <a href="{{ route('all.blog.category') }}" class="nav-link">Blog Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../pages/tables/data-table.html" class="nav-link">Add Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../pages/tables/data-table.html" class="nav-link">Manage Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('all.photos') }}" class="nav-link">
             <i class="link-icon" data-feather="hash"></i>
             <span class="link-title">photos</span>
