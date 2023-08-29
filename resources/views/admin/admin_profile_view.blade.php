@@ -12,27 +12,28 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <div>
-                            <img class="wd-100 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile">
-                            <span class="h4 ms-3">{{ $profileData->usernames }}</span>
+                            <img class=" rounded-circle" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile" style="height: 100px; width:100px; object-fit: cover">
+                            <span class="h4 ms-3">{{ $profileData->name }}</span>
                         </div>
                     </div>
-                    <p>Hi! I'm Amiah the Senior UI Designer at NobleUI. We hope you enjoy the design and quality of Social.</p>
+                    
+                    <p>{{ $profileData->address}}</p>
                     <div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Name:</label>
-                        <p class="text-muted">{{ $profileData->name }}</p>
+                        <label class="tx-11 fw-bolder mb-0 text-uppercase">UserName:</label>
+                        <p class="text-muted">{{ $profileData->usernames}}</p>
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Email:</label>
                         <p class="text-muted">{{ $profileData->email }}</p>
                     </div>
                     <div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Phone:</label>
+                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Designation:</label>
                         <p class="text-muted">{{ $profileData->phone }}</p>
                     </div>
-                    <div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Address:</label>
-                        <p class="text-muted">{{ $profileData->address ? $profileData->address : 'N/A' }}</p>
-                    </div>
+                    {{-- <div class="mt-3"> --}}
+                        {{-- <label class="tx-11 fw-bolder mb-0 text-uppercase">Address:</label> --}}
+                        {{-- <p class="text-muted">{{ $profileData->address ? $profileData->address : 'N/A' }}</p> --}}
+                    {{-- </div> --}}
 
                     <div class="mt-3 d-flex social-links">
                         <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
@@ -59,24 +60,27 @@
                             @csrf
 
                             <div class="mb-3">
-                                <label for="usernames" class="form-label">Username</label>
-                                <input type="text" name="usernames" class="form-control" id="usernames" autocomplete="off" value="{{ $profileData->usernames }}">
-                            </div>
-                            <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" name="name" class="form-control" id="name" autocomplete="off" value="{{ $profileData->name }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="usernames" class="form-label">Username</label>
+                                <input type="text" name="usernames" class="form-control" id="usernames" autocomplete="off" value="{{ $profileData->usernames }}">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control" id="email" autocomplete="off" value="{{ $profileData->email }}">
                             </div>
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Phone</label>
+                                <label for="phone" class="form-label">Designation</label>
                                 <input type="text" name="phone" class="form-control" id="phone" autocomplete="off" value="{{ $profileData->phone }}">
                             </div>
                             <div class="mb-3">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" name="address" class="form-control" id="address" autocomplete="off" value="{{ $profileData->address }}">
+                                <label for="address" class="form-label">Descrption</label>
+                                {{-- <input type="text" name="address" class="form-control" id="address" autocomplete="off" value="{{ $profileData->address }}"> --}}
+                                <textarea class="form-control" name="address" rows="8" placeholder="Descrption">
+                                    {{ $profileData->address}}
+                                </textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Photo</label>

@@ -147,13 +147,26 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
 
-    // Blog Manage All Route
+    // Blog-Category Manage All Route
     Route::controller(BlogController::class)->group(function(){
         Route::get('/all/blog/category/manage', 'AllBlogCategory')->name('all.blog.category');
         Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
         Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('edit.blog.category');
         Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
         Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('delete.blog.category');
+    });
+
+
+    // Blog Manage All Route
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/all/blog/manage', 'AllBlog')->name('all.blog');
+        Route::get('/add/blog', 'AddBlog')->name('add.blog');
+        Route::post('/store/blog', 'StoreBlog')->name('store.blog');
+        Route::get('/edit/blog/{id}', 'EditBlog')->name('edit.blog');
+        Route::post('/update/blog/{id}', 'UpdateBlog')->name('update.blog');
+        Route::get('/delete/blog/{id}', 'DeleteBlog')->name('delete.blog');
+        Route::get('/blog/inactive/{id}', 'InactiveBlog')->name('inactive.blog');
+        Route::get('/blog/active/{id}', 'ActiveBlog')->name('active.blog');
     });
 
 

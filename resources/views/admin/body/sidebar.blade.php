@@ -87,10 +87,10 @@
                         <a href="{{ route('all.blog.category') }}" class="nav-link">Blog Category</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../pages/tables/data-table.html" class="nav-link">Add Blog</a>
+                        <a href="{{ route('add.blog') }}" class="nav-link">Add Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../pages/tables/data-table.html" class="nav-link">Manage Blog</a>
+                        <a href="{{ route('all.blog') }}" class="nav-link">Manage Blog</a>
                     </li>
                 </ul>
             </div>
