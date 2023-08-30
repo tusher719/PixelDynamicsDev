@@ -76,6 +76,16 @@
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
+                                    <div class="mb-3">
+										<label for="exampleFormControlTextarea1" class="form-label">Blog short details <span class="text-danger">(Max: 200 chars)</span></label>
+                                        <input id="maxlength-textarea" name="short_details" class="form-control" maxlength="200" value="{{ $blog->short_details }}" placeholder="This short details limit of 200 chars.">
+                                        @error('short_details')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+									</div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
                                     <label class="form-label" for="formFile">Post Details</label>
                                     <div class="mb-3">
                                             <textarea id="editor1" name="blog_details" rows="20" cols="15">

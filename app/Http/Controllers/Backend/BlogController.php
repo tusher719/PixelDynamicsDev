@@ -121,6 +121,7 @@ class BlogController extends Controller
             'blog_name' => 'required',
             'category_id' => 'required',
             'blog_img' => 'required|mimes:jpeg,png,jpg,gif|max:5120',
+            'short_details' => 'required',
             'blog_details' => 'required',
         ]);
         
@@ -133,6 +134,7 @@ class BlogController extends Controller
         $blog->blog_name = $request->blog_name;
         $blog->blog_name_slug = strtolower(str_replace(' ', '-',$request->blog_name));
         $blog->category_id = $request->category_id;
+        $blog->short_details = $request->short_details;
         $blog->blog_details = $request->blog_details;
         $blog->status = 1;
         $blog->save();
@@ -181,6 +183,7 @@ class BlogController extends Controller
         $blog->blog_name = $request->blog_name;
         $blog->blog_name_slug = strtolower(str_replace(' ', '-',$request->blog_name));
         $blog->category_id = $request->category_id;
+        $blog->short_details = $request->short_details;
         $blog->blog_details = $request->blog_details;
 
         $blog->save();

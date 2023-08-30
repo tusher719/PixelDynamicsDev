@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\BlogCategory;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
@@ -46,9 +48,19 @@ class IndexController extends Controller
     }
 
 
-    // Service Page View
+    // Blog Page View
     public function Blog() {
-        return view('frontend.blog.blog');
+        $blogcat = BlogCategory::orderBy('category_name', 'ASC')->get();
+        $blog = Blog::where('status',1)->get();
+        return view('frontend.blog.blog', compact('blog','blogcat'));
+    }
+
+
+    // Blog-Main Page View
+    public function BlogMain($id) {
+        $blogcat = BlogCategory::orderBy('category_name', 'ASC')->get();
+        $blog = Blog::findOrFail($id);
+        return view('frontend.blog.blog_main', compact('blog','blogcat'));
     }
 
 
@@ -57,11 +69,6 @@ class IndexController extends Controller
         return view('frontend.contacts.contact');
     }
 
-
-    // Service Page View
-    public function BlogMain() {
-        return view('frontend.blog.blog_main');
-    }
 
 
 }

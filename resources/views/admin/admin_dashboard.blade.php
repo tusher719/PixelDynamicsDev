@@ -95,6 +95,9 @@
     <script src="{{ asset('backend') }}/assets/vendors/ckeditor/ckeditor.js"></script>
     <script src="{{ asset('backend') }}/assets/js/editor.js"></script>
 
+    <script src="{{ asset('backend') }}/assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="{{ asset('backend') }}/assets/js/bootstrap-maxlength.js"></script>
+
     <script src="{{ asset('backend') }}/assets/js/data-table.js"></script>
     <script src="{{ asset('backend') }}/assets/js/validate.min.js"></script>
 

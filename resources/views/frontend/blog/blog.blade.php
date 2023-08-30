@@ -14,21 +14,11 @@ active
                 <div class="blog-nav">
                     <span>Category:</span>
                     <ul>
+                        @foreach ($blogcat as $item)
                         <li>
-                            <a href="#">Branding</a>
+                            <a href="#">{{ $item->category_name }}</a>
                         </li>
-                        <li>
-                            <a href="#">Game</a>
-                        </li>
-                        <li>
-                            <a href="#">Esports</a>
-                        </li>
-                        <li>
-                            <a href="#">Video</a>
-                        </li>
-                        <li>
-                            <a href="#">VFX</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -40,58 +30,25 @@ active
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                <a class="card" href="{{ route('blog.main') }}">
-                    <img src="{{ asset('frontend') }}/assets/images/blog-1.jpg" class="img-fluid" alt="Card Image">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Blog Title</h5>
-                        <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae aut consectetur magni corporis inventore ad porro, aspernatur recusandae nulla iusto, assumenda dolorem quos consequuntur architecto rerum beatae, eveniet totam?</p>
-                        <div class="card-btn mt-auto align-self-start">
-                            <button class="btn-date">23 July 2023</button>
-                            <span class="btn-cat">Game UI UX</span>
+
+            @foreach ($blog as $item)
+                <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
+                    <a class="card" href="{{ route('blog.main',$item->id) }}">
+                        <img src="{{ (!empty($item->blog_img)) ? url('uploads/blog/'.$item->blog_img) : url('uploads/no_image.jpg') }}" class="img-fluid" alt="{{ $item->blog_name_slug }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $item->blog_name }}</h5>
+                            <p class="card-text mb-4"> {{ $item->short_details }} </p>
+                            <div class="card-btn mt-auto align-self-start">
+                                <button class="btn-date">
+                                    {{ Carbon\Carbon::parse($item->created_at)->format('d M Y')  }}
+                                </button>
+                                <span class="btn-cat">{{ $item->category->category_name }}</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                <a class="card" href="{{ route('blog.main') }}">
-                    <img src="{{ asset('frontend') }}/assets/images/blog-2.jpg" class="img-fluid" alt="Card Image">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Blog Title</h5>
-                        <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae aut consectetur magni corporis inventore ad porro, aspernatur recusandae nulla iusto,</p>
-                        <div class="card-btn mt-auto align-self-start">
-                            <button class="btn-date">23 July 2023</button>
-                            <span class="btn-cat">Game UI UX</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                <a class="card" href="{{ route('blog.main') }}">
-                    <img src="{{ asset('frontend') }}/assets/images/blog-3.jpg" class="img-fluid" alt="Card Image">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Blog Title</h5>
-                        <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae aut consectetur magni corporis inventore ad porro, aspernatur recusandae nulla iusto, assumenda dolorem quos consequuntur architecto rerum beatae, eveniet totam?</p>
-                        <div class="card-btn mt-auto align-self-start">
-                            <button class="btn-date">23 July 2023</button>
-                            <span class="btn-cat">Game UI UX</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
-                <a class="card" href="{{ route('blog.main') }}">
-                    <img src="{{ asset('frontend') }}/assets/images/blog-3.jpg" class="img-fluid" alt="Card Image">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Blog Title</h5>
-                        <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae aut consectetur magni corporis inventore ad porro, aspernatur recusandae nulla iusto, assumenda dolorem quos consequuntur architecto rerum beatae, eveniet totam?</p>
-                        <div class="card-btn mt-auto align-self-start">
-                            <button class="btn-date">23 July 2023</button>
-                            <span class="btn-cat">Game UI UX</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
+
         </div>
     </div>
 </div>
