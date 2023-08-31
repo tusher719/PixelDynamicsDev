@@ -14,23 +14,24 @@ active
                 <h2>Contact US</h2>
                 <p>Contact us for Inquires and We are there for any help regarding design.</p>
             </div>
-            <form action="">
+            <form action="{{ route('message') }}" method="post">
+                @csrf
                 <div class="mb-3">
-                    <input type="name" class="form-control" placeholder="Name">
+                    <input type="name" name="name" class="form-control" placeholder="Name">
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                    <select class="form-control">
-                        <option selected>Serviece</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="service" class="form-control">
+                        <option selected disabled>Serviece</option>
+                        <option value="one">One</option>
+                        <option value="two">Two</option>
+                        <option value="three">Three</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" placeholder="Message" rows="6"></textarea>
+                    <textarea name="message" class="form-control" placeholder="Message" rows="6"></textarea>
                 </div>
                 <button class="send-btn" type="submit">Send</button>
             </form>

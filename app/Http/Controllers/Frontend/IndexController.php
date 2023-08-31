@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Contact;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
@@ -64,9 +65,41 @@ class IndexController extends Controller
     }
 
 
-    // Service Page View
+    // Contact Page View
     public function Contact() {
         return view('frontend.contacts.contact');
+    }
+
+    // Store Contact
+    public function Message(Request $request) {
+
+        // dd($request->all());
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'service' => 'required',
+            'message' => 'required',
+        ],[
+            'name.required' => 'Please Enter Your Name',
+            'email.required' => 'Please Enter Email Address',
+            'service.required' => 'Please Select Service',
+            'message.required' => 'Please Enter Your Message',
+        ]);
+
+
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'service' => $request->service,
+            'message' => $request->message,
+        ]);
+        $notification = array(
+            'message' => 'Message Sent Successfully',
+            'alert-type' => 'success',
+        );
+        
+        return redirect()->back()->with($notification);
     }
 
 

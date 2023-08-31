@@ -101,6 +101,12 @@
             <span class="link-title">photos</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('contact.manage') }}" class="nav-link">
+            <i class="link-icon" data-feather="mail"></i>
+            <span class="link-title">Messages</span>
+            </a>
+        </li>
 
 
         <li class="nav-item nav-category">Docs</li>

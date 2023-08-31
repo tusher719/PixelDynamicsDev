@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\PhotosController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ServiceController;
@@ -170,6 +171,13 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
 
+    // Contact Manage All Route
+    Route::controller(ContactController::class)->group(function(){
+        Route::get('/contact/manage', 'ContactMessage')->name('contact.manage');
+        Route::get('/contact/view/{id}', 'ContactView')->name('contact.view');
+    });
+
+
 }); // End Group Admin Middleware
 
 
@@ -192,6 +200,8 @@ Route::controller(IndexController::class)->group(function(){
     Route::get('/team', 'Team')->name('team');
     Route::get('/blog', 'Blog')->name('blog');
     Route::get('/blog/main/{id}', 'BlogMain')->name('blog.main');
+    // Contact
     Route::get('/contact', 'Contact')->name('contact');
+    Route::post('/message', 'Message')->name('message');
 
 });
