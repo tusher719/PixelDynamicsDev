@@ -31,6 +31,7 @@
                                         <th>email</th>
                                         <th>service</th>
                                         <th>message</th>
+                                        <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -42,6 +43,7 @@
                                         <td><h5>{{ $item->email }}</h5></td>
                                         <td><h5>{{ $item->service }}</h5></td>
                                         <td><h5>{{ Str::limit($item->message, 40) }}</h5></td>
+                                        <td><h5>{{ $item->created_at->diffForHumans() }}</h5></td>
                                         <td>
                                             <a href="{{ route('contact.view',$item->id) }}" class="btn btn-inverse-info btn-icon-text">
                                                 <i class="btn-icon-prepend" data-feather="file"></i>

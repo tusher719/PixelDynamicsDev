@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\PhotosController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\TeamMemberController;
 use App\Http\Controllers\Frontend\IndexController;
@@ -175,6 +176,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(ContactController::class)->group(function(){
         Route::get('/contact/manage', 'ContactMessage')->name('contact.manage');
         Route::get('/contact/view/{id}', 'ContactView')->name('contact.view');
+    });
+
+
+    // Settings All Route
+    Route::controller(SettingController::class)->group(function(){
+        Route::get('/settings', 'Settings')->name('settings');
+        Route::post('/store/logo', 'StoreLogo')->name('store.logo');
+        Route::post('/store/social', 'StoreSocial')->name('store.social');
     });
 
 

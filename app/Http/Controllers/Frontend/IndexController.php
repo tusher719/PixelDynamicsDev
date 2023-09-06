@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactMessage;
+use App\Mail\Mail;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Contact;
@@ -11,9 +13,11 @@ use App\Models\PortfolioManage;
 use App\Models\PortfolioSubCategory;
 use App\Models\ServiceOffers;
 use App\Models\ServiceSubcription;
+use App\Models\SiteSetting;
 use App\Models\TeamCarousel;
 use App\Models\TeamMembers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class IndexController extends Controller
 {
@@ -67,7 +71,8 @@ class IndexController extends Controller
 
     // Contact Page View
     public function Contact() {
-        return view('frontend.contacts.contact');
+        $siteSetting = SiteSetting::first();
+        return view('frontend.contacts.contact', compact('siteSetting'));
     }
 
     // Store Contact
@@ -88,12 +93,15 @@ class IndexController extends Controller
         ]);
 
 
-        Contact::create([
+        
+        
+        $mailData = Contact::create([
             'name' => $request->name,
             'email' => $request->email,
             'service' => $request->service,
             'message' => $request->message,
         ]);
+        FacadesMail::to('contactpixeldynamics@gmail.com')->send(new ContactMessage($mailData));
         $notification = array(
             'message' => 'Message Sent Successfully',
             'alert-type' => 'success',

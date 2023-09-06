@@ -51,32 +51,32 @@ active
                     <div class="icons">
                         <ul>
                             <li>
-                                <a href="#">
-                                    <i class="fb fa-brands fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
+                                <a href="{{ $siteSetting->linkedin }}" target="_blank">
                                     <i class="linke fa-brands fa-linkedin-in"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ $siteSetting->facebook }}" target="_blank">
+                                    <i class="fb fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ $siteSetting->insta }}" target="_blank">
                                     <i class="insta fa-brands fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ $siteSetting->twitter }}" target="_blank">
                                     <i class="tw fa-brands fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ $siteSetting->artstation }}" target="_blank">
                                     <i class="as fa-brands fa-artstation"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ $siteSetting->behance }}" target="_blank">
                                     <i class="be fa-brands fa-behance"></i>
                                 </a>
                             </li>

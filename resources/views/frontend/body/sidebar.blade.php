@@ -1,3 +1,7 @@
+@php
+    $siteSetting = App\Models\SiteSetting::first();
+@endphp
+
 <aside id="aside" role="complementary" class="js-fullheight">
     <h1 id="logo">
         <a href="{{ url('/') }}" class="logo-con">
@@ -7,7 +11,7 @@
                 <p class="txt2">.studio</p>
             </div>
         </a>
-        <p class="camption">A studio powered by industry leading professionals.</p>
+        <p class="camption">{{ $siteSetting->desc }}</p>
     </h1>
     <nav id="main-menu" role="navigation">
         <ul>
@@ -46,22 +50,22 @@
             <div class="icons">
                 <ul>
                     <li class="facebook">
-                        <a href="#">
+                        <a href="{{ $siteSetting->linkedin }}" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="linke">
+                        <a href="{{ $siteSetting->facebook }}" target="_blank">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
                     </li>
                     <li class="insta">
-                        <a href="#">
+                        <a href="{{ $siteSetting->insta }}" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
-                    <li class="linke">
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </li>
                     <li class="twitter">
-                        <a href="#">
+                        <a href="{{ $siteSetting->twitter }}" target="_blank">
                             <i class="fa-brands fa-twitter"></i>
                         </a>
                     </li>
