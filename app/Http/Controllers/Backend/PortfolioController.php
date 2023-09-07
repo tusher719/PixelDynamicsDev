@@ -192,7 +192,7 @@ class PortfolioController extends Controller
     public function PortfolioPortfolio(){
         $category = PortfolioCategory::all();
         $subcategory = PortfolioSubCategory::all();
-        $portfolio = PortfolioManage::latest()->get();
+        $portfolio = PortfolioManage::orderBy('serial_id', 'ASC')->get();
         Return view('portfolio.manage.portfolio_manage', compact('category', 'subcategory','portfolio'));
     } // End Method
 
@@ -230,6 +230,7 @@ class PortfolioController extends Controller
         $request->portfolio_img->move(public_path('uploads/portfolios'), $imageName);
 
         $portfolio = new PortfolioManage();
+        $portfolio->serial_id = $request->serial_id;
         $portfolio->photo = $imageName;
         $portfolio->portfolio_name = $request->portfolio_name;
         $portfolio->portfolio_name_slug = strtolower(str_replace(' ', '-',$request->portfolio_name));
@@ -281,6 +282,7 @@ class PortfolioController extends Controller
             $portfolio->photo = $imageName;
         }
 
+        $portfolio->serial_id = $request->serial_id;
         $portfolio->portfolio_name = $request->portfolio_name;
         $portfolio->portfolio_name_slug = strtolower(str_replace(' ', '-',$request->portfolio_name));
         $portfolio->category_id = $request->category_id;

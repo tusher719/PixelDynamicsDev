@@ -26,6 +26,7 @@ class IndexController extends Controller
         $category = PortfolioCategory::all();
         $subcategory = PortfolioSubCategory::all();
         $portfolio = PortfolioManage::where('status',1)->latest()->get();
+        $portfolio = PortfolioManage::where('status',1)->orderBy('serial_id', 'ASC')->get();
         return view('frontend.portfolio.portfolio', compact('category', 'subcategory', 'portfolio'));
     } // End Method
 

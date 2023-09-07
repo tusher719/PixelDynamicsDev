@@ -19,83 +19,91 @@
         <div class="row">
 
             <div class="col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-body">
-
-                        <h6 class="card-title">Category</h6>
-
-                        <form action="{{ route('store.portfolio') }}" method="POST" enctype="multipart/form-data" class="forms-sample" id="myForm">
-                            @csrf
-
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="mb-3">
-                                        <label class="form-label">Portfolio Name</label>
-                                        <input type="text" name="portfolio_name" class="form-control" placeholder="Enter Portfolio name">
-                                        @error('portfolio_name')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Category Name</label>
-                                        <select name="category_id" class="form-select">
-                                            <option selected="" disabled="">Select Group</option>
-                                            @foreach ($category as $item)
-                                                <option value="{{ $item->id }}">{{ $item->category_name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('category_id')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">SubCategory Name</label>
-                                        <select name="subcategory_id" class="form-select">
-
-                                        </select>
-                                        @error('subcategory_id')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="formFile">File upload (Max file size: 2MB)</label>
-                                        <input name="portfolio_img" class="form-control" type="file" id="photo">
-                                        @error('portfolio_img')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="mb-3">
-                                        <img id="showImage" class="wd-300" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <label class="form-label" for="formFile">Post Details</label>
-                                    <div class="mb-3">
-                                            <textarea id="editor1" name="portfolio_details" rows="20" cols="15">
-                                                Portfolio Details
-                                            </textarea>
-                                    </div>
-                                </div>
+                <form action="{{ route('store.portfolio') }}" method="POST" enctype="multipart/form-data" class="forms-sample" id="myForm">
+                    @csrf
+                    <div class="card">
+                        <div class="card-header d-flex" style="justify-content: space-between; align-items: center">
+                            <h5>Add Portfolio</h5>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <label style="margin-right: 10px">ID:</label>
+                                <input type="text" name="serial_id" class="form-control" placeholder="ID">
                             </div>
+                        </div>
+                        <div class="card-body">
+
+                            <h6 class="card-title">Category</h6>
+
+                            
+
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Portfolio Name</label>
+                                            <input type="text" name="portfolio_name" class="form-control" placeholder="Enter Portfolio name">
+                                            @error('portfolio_name')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Category Name</label>
+                                            <select name="category_id" class="form-select">
+                                                <option selected="" disabled="">Select Group</option>
+                                                @foreach ($category as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('category_id')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">SubCategory Name</label>
+                                            <select name="subcategory_id" class="form-select">
+
+                                            </select>
+                                            @error('subcategory_id')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="formFile">File upload (Max file size: 2MB)</label>
+                                            <input name="portfolio_img" class="form-control" type="file" id="photo">
+                                            @error('portfolio_img')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="mb-3">
+                                            <img id="showImage" class="wd-300" src="{{ (!empty($profileData->photo)) ? url('uploads/admin_images/'.$profileData->photo) : url('uploads/no_image.jpg') }}" alt="profile">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <label class="form-label" for="formFile">Post Details</label>
+                                        <div class="mb-3">
+                                                <textarea id="editor1" name="portfolio_details" rows="20" cols="15">
+                                                    Portfolio Details
+                                                </textarea>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                            <button type="submit" class="btn btn-primary me-2">Submit</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary me-2">Submit</button>
 
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 

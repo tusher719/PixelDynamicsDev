@@ -30,6 +30,7 @@
                                     <tr>
                                         <th>Sl.</th>
                                         <th>Image</th>
+                                        <th>Serial Id</th>
                                         <th>Portfolio name</th>
                                         <th>Category name</th>
                                         <th>SubCategory name</th>
@@ -44,6 +45,7 @@
                                         <td>
                                             <img style="width: 150px; height: 100px; object-fit:cover; border-radius:0;" src="{{ (!empty($item->photo)) ? url('uploads/portfolios/'.$item->photo) : url('uploads/no_image.jpg') }}" alt="profile">
                                         </td>
+                                        <td><h5>{{ $item->serial_id }}</h5></td>
                                         <td><h5>{{ $item->portfolio_name }}</h5></td>
                                         <td><h5>{{ $item->category->category_name }}</h5></td>
                                         <td><h5>{{ $item->subcategory->subcategory_name }}</h5></td>
