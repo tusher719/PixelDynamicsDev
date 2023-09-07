@@ -53,7 +53,7 @@ active
                         $subcategories = \App\Models\PortfolioSubCategory::where('category_id',$item->id)->get();
                     @endphp
 
-                    {{ $item->id}}: [
+                    {{ $item->category_slug}}: [
 
                         @foreach($subcategories as $subcat)
                         '{{ $subcat->subcategory_slug }}'

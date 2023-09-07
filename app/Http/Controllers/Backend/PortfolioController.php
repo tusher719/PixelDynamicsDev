@@ -33,7 +33,7 @@ class PortfolioController extends Controller
         $category = PortfolioCategory::create([
 
             'category_name' => Str::ucfirst($request->category_name),
-            'category_slug' => strtolower(str_replace(' ', '-',$request->category_name)),
+            'category_slug' => strtolower(str_replace(' ', '_',$request->category_name)),
         ]);
 
         $notification = array(
@@ -60,7 +60,7 @@ class PortfolioController extends Controller
 
         PortfolioCategory::FindOrFail($cat_id)->update([
             'category_name' => Str::ucfirst($request->category_name),
-            'category_slug' => strtolower(str_replace(' ', '-',$request->category_name)),
+            'category_slug' => strtolower(str_replace(' ', '_',$request->category_name)),
         ]);
 
         $notification = array(
@@ -95,7 +95,7 @@ class PortfolioController extends Controller
 
 
     /*==================================================================
-            ===============|| Sub-Category Method ||===============
+            ===============|| Sub-Category Method ||====================
     ====================================================================*/
 
     // Sub-Category Page View

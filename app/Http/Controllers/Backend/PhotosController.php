@@ -10,7 +10,7 @@ class PhotosController extends Controller
 {
     //
     public function AllPhotos() {
-        $photos = Photos::all();
+        $photos = Photos::orderBy('id','DESC')->get();
         return view('backend.photos.all_photos', compact('photos'));
     }
 
@@ -23,7 +23,8 @@ class PhotosController extends Controller
             'photos' => 'required|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $imageName = time().'.'.$request->photos->extension();
+        // $imageName = time().'.'.$request->photos->extension();
+        $imageName = time().'_'.$request->photos->getClientOriginalName();
         $request->photos->move(public_path('uploads/photos'), $imageName);
 
         $photorm = new Photos();
