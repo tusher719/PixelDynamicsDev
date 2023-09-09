@@ -70,6 +70,17 @@ class IndexController extends Controller
     }
 
 
+    // Category Wise Blog
+    public function CatWiseBlog($cat_id, $slug) {
+        $catpost = Blog::where('category_id', $cat_id)->get();
+        $category = BlogCategory::orderBy('category_name')->get();
+        $blogcat = BlogCategory::orderBy('category_name', 'ASC')->get();
+        $recentPost = Blog::latest()->limit(5)->get();
+        $blog = Blog::where('status',1)->get();
+        return view('frontend.blog.cat_wise.blog_cat', compact('catpost','category','recentPost','blog','blogcat'));
+    }
+
+
     // Contact Page View
     public function Contact() {
         $siteSetting = SiteSetting::first();

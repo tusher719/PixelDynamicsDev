@@ -213,4 +213,7 @@ Route::controller(IndexController::class)->group(function(){
     Route::get('/contact', 'Contact')->name('contact');
     Route::post('/message', 'Message')->name('message');
 
+    // Category wise data
+    Route::get('/category/blog/{cat_id}/{slug}', 'CatWiseBlog')->name('category.post');
+
 });

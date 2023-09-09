@@ -31,7 +31,7 @@ active
         </div>
         <div class="row">
 
-            @foreach ($blog as $item)
+            @foreach ($catpost as $item)
                 <div class="col-lg-4 col-md-6 mt-4 d-flex align-items-stretch">
                     <a class="card" href="{{ route('blog.main',$item->id) }}">
                         <img src="{{ (!empty($item->blog_img)) ? url('uploads/blog/'.$item->blog_img) : url('uploads/no_image.jpg') }}" class="img-fluid" alt="{{ $item->blog_name_slug }}">
